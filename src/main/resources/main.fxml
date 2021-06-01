@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/16"
+            fx:controller="com.zoli.survivor.ui.MainController">
+    <left>
+        <VBox maxWidth="130" minWidth="130.0" BorderPane.alignment="CENTER">
+            <VBox BorderPane.alignment="CENTER">
+                <padding>
+                    <Insets left="5"/>
+                </padding>
+                <Label fx:id="turns" text="Turns">
+                    <font>
+                        <Font size="16.0"/>
+                    </font>
+                </Label>
+                <Label fx:id="hunger" text="Hunger">
+                    <font>
+                        <Font size="16.0"/>
+                    </font>
+                </Label>
+                <Label fx:id="thirst" text="Thirst">
+                    <font>
+                        <Font size="16.0"/>
+                    </font>
+                </Label>
+                <Label fx:id="sharkDefence" text="Shark defence">
+                    <font>
+                        <Font size="16.0"/>
+                    </font>
+                </Label>
+            </VBox>
+            <TextArea fx:id="details" editable="false" focusTraversable="false" prefHeight="220.0" wrapText="true">
+                <font>
+                    <Font size="14.0"/>
+                </font>
+            </TextArea>
+            <TextArea fx:id="instructions" editable="false" focusTraversable="false" prefHeight="220.0"
+                      wrapText="true"/>
+            <VBox alignment="CENTER" spacing="10.0">
+                <padding>
+                    <Insets top="10" right="5" bottom="5" left="5"/>
+                </padding>
+                <Button focusTraversable="false" mnemonicParsing="false" onAction="#newGame"
+                        text="New game"/>
+                <Button fx:id="startStopAI" focusTraversable="false" mnemonicParsing="false" onAction="#startStopAI"
+                        text="Start AI"/>
+            </VBox>
+            <HBox alignment="TOP_CENTER" spacing="10.0">
+                <padding>
+                    <Insets top="5" bottom="5"/>
+                </padding>
+                <Button fx:id="load" focusTraversable="false" mnemonicParsing="false" onAction="#load"
+                        text="Load"/>
+                <Button fx:id="save" focusTraversable="false" mnemonicParsing="false" onAction="#save"
+                        text="Save"/>
+            </HBox>
+            <HBox>
+                <padding>
+                    <Insets top="5" right="5" bottom="5" left="5"/>
+                </padding>
+                <Button focusTraversable="false" mnemonicParsing="false" onAction="#handleInputAgain"
+                        wrapText="true" text="Handle keyboard input again."/>
+            </HBox>
+        </VBox>
+    </left>
+    <center>
+        <Canvas fx:id="canvas" height="640.0" width="960.0" BorderPane.alignment="CENTER"/>
+    </center>
+</BorderPane>
